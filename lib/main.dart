@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/core/presentation/home/index.dart';
+import 'package:flutter_boilerplate/config/SimpleBlocObserver.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/core/business/cubit/counter_cubit.dart';
+import 'package:flutter_boilerplate/core/presentation/home_cubit/index.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObserver();
   runApp(MyApp());
 }
 
@@ -23,7 +27,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: BlocProvider(
+        create: (BuildContext context) => CounterCubit(),
+        child: CounterCubitPage(),
+      ),
     );
   }
 }
