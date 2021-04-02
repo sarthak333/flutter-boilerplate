@@ -17,7 +17,7 @@ class Application {
     bool clearStack = false,
     bool maintainState = true,
     bool rootNavigator = false,
-    TransitionType? transition = TransitionType.material,
+    TransitionType? transition = TransitionType.cupertino,
     Duration? transitionDuration,
     RouteTransitionsBuilder? transitionBuilder,
     RouteSettings? routeSettings,
