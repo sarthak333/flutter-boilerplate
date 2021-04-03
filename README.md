@@ -2,13 +2,22 @@
 
 A scalable boilerplate for flutter apps.
 
-### Features
+### Note:
+
+1. Create your own `.env.production` and `.env.development` files.
+2. You'll need your own `google-services.json` and `GoogleServices-info.plist?` files from firebase.
+
+### Features:
 
 - [x] A layered architecture
 - [x] BLoC pattern via [flutter_bloc](https://pub.dev/packages/flutter_bloc)
 - [x] Routing via [Fluro](https://pub.dev/packages/fluro) (Deeplinking supported)
 - [x] ENV variables via [envify](https://pub.dev/packages/envify)
 - [x] TextStyle management
+- [x] Firebase Analytics
+- [x] Firebase Messaging
+  - [x] Android
+  - [ ] iOS
 - [ ] Themes
 - [ ] Common Components
   - [ ] Button
@@ -43,6 +52,7 @@ A scalable boilerplate for flutter apps.
 5. You can customize these toasts in the [app.dart](lib/config/app.dart) file.
 
 #### Font management:
+
 1. All the font styles i.e. `TextStyle` should be maintained in the `core/presentation/common/fonts` directory.
 2. A font family will translate to being the `primary`, `secondary` or the `tertiary` font in the project.
 3. Each font family must have it's own separate file which follows the conventions laid out in [primary_font.dart](lib/core/presentation/common/fonts/primary_font.dart).
@@ -51,3 +61,8 @@ A scalable boilerplate for flutter apps.
 
 1. Use [quicktype.io](https://app.quicktype.io/) to create the model classes. Go to the website, select `dart` and paste the JSON respone.
 
+#### Firebase messaging
+
+1. Both foreground and background messages are handled in [firebase.dart](lib/config/utils/firebase.dart).
+2. Add your `google-services.json` and `GoogleServices-info.plist?` files. This repo does not contain either.
+3. Check out the JSON structure at the bottom of [firebase.dart](lib/config/utils/firebase.dart) file that needs to be followed for Heads-up notifications on background messages (Android).

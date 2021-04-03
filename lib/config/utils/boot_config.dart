@@ -1,5 +1,6 @@
+import 'package:flutter_boilerplate/config/utils/firebase.dart';
+
 Future<bool> handleBoot() async {
-  return Future.delayed(Duration(seconds: 2), () {
-    return true;
-  });
+  await handleFirebaseConfig(null);
+  return true;
 }
