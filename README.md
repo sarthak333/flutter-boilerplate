@@ -64,5 +64,5 @@ A scalable boilerplate for flutter apps.
 #### Firebase messaging
 
 1. Both foreground and background messages are handled in [firebase.dart](lib/config/utils/firebase.dart).
-2. Add your `google-services.json` and `GoogleServices-info.plist?` files. This repo does not contain either.
+2. Add your `google-services.json` and `GoogleServices-info.plist` files. This repo does not contain either.
 3. Check out the JSON structure at the bottom of [firebase.dart](lib/config/utils/firebase.dart) file that needs to be followed for Heads-up notifications on background messages (Android).
