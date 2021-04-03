@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/config/application.dart';
+import 'package:flutter_boilerplate/config/app.dart';
 import 'package:flutter_boilerplate/core/business/cubit/counter_cubit.dart';
 
 class CounterCubitPage extends StatefulWidget {
@@ -10,7 +10,7 @@ class CounterCubitPage extends StatefulWidget {
 
 class _CounterCubitPageState extends State<CounterCubitPage> {
   void goToBlocCounter() {
-    Application.navigateTo(
+    App.navigateTo(
       context,
       'counterBloc?message=hello_from_cubit',
     );

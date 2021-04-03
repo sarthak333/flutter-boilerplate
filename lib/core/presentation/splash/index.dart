@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/config/application.dart';
+import 'package:flutter_boilerplate/config/app.dart';
 import 'package:flutter_boilerplate/config/environment.dart';
 
 class Splash extends StatefulWidget {
@@ -14,21 +14,21 @@ class _SplashState extends State<Splash> {
   }
 
   void goToCubit() {
-    Application.navigateTo(
+    App.navigateTo(
       context,
       'counterCubit?message=this_is_cubit',
     );
   }
 
   void goToBloc() {
-    Application.navigateTo(
+    App.navigateTo(
       context,
       'counterBloc?message=this_is_bloc',
     );
   }
 
   void goToErrorScreen() {
-    Application.navigateTo(
+    App.navigateTo(
       context,
       'randomRoute?message=this_is_error',
     );
@@ -60,6 +60,27 @@ class _SplashState extends State<Splash> {
                   ElevatedButton(
                     onPressed: goToErrorScreen,
                     child: Text('Error Screen'),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () =>
+                        App.notifySuccess('Write your message here'),
+                    child: Text('Alert Success'),
+                  ),
+                  SizedBox(width: 4),
+                  ElevatedButton(
+                    onPressed: () => App.notifyError('Write your message here'),
+                    child: Text('Alert Error'),
+                  ),
+                  SizedBox(width: 4),
+                  ElevatedButton(
+                    onPressed: () =>
+                        App.notifyWarning('Write your message here'),
+                    child: Text('Alert warning'),
                   ),
                 ],
               ),

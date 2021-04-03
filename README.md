@@ -22,7 +22,7 @@ A scalable boilerplate for flutter apps.
 1. Define the route in [routes.dart](lib/config/routes/routes.dart)
 2. Handle the route in [handlers.dart](lib/config/routes/route_handlers.dart)
 3. Use Application singleton's `navigateTo` method for navigation.
-   i.e. `Application.navigateTo()` instead of `Application.router.navigateTo()`.
+   i.e. `App.navigateTo()` instead of `App.router.navigateTo()`.
 4. Can be used for deeplinking.
 
 #### Environment
