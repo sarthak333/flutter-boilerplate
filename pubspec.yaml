@@ -27,8 +27,11 @@ dependencies:
   flutter_bloc: ^7.0.0
   google_fonts: ^2.0.0
   fluro: ^2.0.3
+  envify: ^2.0.0
   
 dev_dependencies:
+  envify_generator: ^2.0.0
+  build_runner: ^1.12.2
   flutter_test:
     sdk: flutter
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/config/application.dart';
+import 'package:flutter_boilerplate/config/environment.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -42,18 +43,25 @@ class _SplashState extends State<Splash> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Splash screen'),
-              ElevatedButton(
-                onPressed: goToCubit,
-                child: Text('Cubit'),
-              ),
-              ElevatedButton(
-                onPressed: goToBloc,
-                child: Text('Bloc'),
-              ),
-              ElevatedButton(
-                onPressed: goToErrorScreen,
-                child: Text('Error Screen'),
+              Text('Splash screen on ${Env.key} environment'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: goToCubit,
+                    child: Text('Cubit'),
+                  ),
+                  SizedBox(width: 4),
+                  ElevatedButton(
+                    onPressed: goToBloc,
+                    child: Text('Bloc'),
+                  ),
+                  SizedBox(width: 4),
+                  ElevatedButton(
+                    onPressed: goToErrorScreen,
+                    child: Text('Error Screen'),
+                  ),
+                ],
               ),
             ],
           ),
