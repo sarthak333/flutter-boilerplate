@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/config/screen_wrapper.dart';
+import 'package:flutter_boilerplate/core/presentation/common/widgets/screen_wrapper.dart';
 import 'package:flutter_boilerplate/core/business/bloc/counter_bloc.dart';
 import 'package:flutter_boilerplate/core/business/cubit/counter_cubit.dart';
 import 'package:flutter_boilerplate/core/presentation/error/index.dart';

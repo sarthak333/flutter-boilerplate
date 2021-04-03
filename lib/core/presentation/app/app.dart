@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/config/app.dart';
+import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/config/routes/routes.dart';
 
 class AppComponent extends StatefulWidget {

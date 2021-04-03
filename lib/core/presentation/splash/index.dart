@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/config/app.dart';
-import 'package:flutter_boilerplate/config/environment.dart';
+import 'package:flutter_boilerplate/config/utils/app.dart';
+import 'package:flutter_boilerplate/config/environment/environment.dart';
+import 'package:flutter_boilerplate/config/utils/boot_config.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -8,9 +9,16 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  bool bootComplete = false;
+
   @override
   void initState() {
     super.initState();
+    handleBoot().then((value) {
+      setState(() {
+        bootComplete = value;
+      });
+    });
   }
 
   void goToCubit() {
@@ -37,57 +45,62 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Splash screen on ${Env.key} environment'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: goToCubit,
-                    child: Text('Cubit'),
-                  ),
-                  SizedBox(width: 4),
-                  ElevatedButton(
-                    onPressed: goToBloc,
-                    child: Text('Bloc'),
-                  ),
-                  SizedBox(width: 4),
-                  ElevatedButton(
-                    onPressed: goToErrorScreen,
-                    child: Text('Error Screen'),
-                  ),
-                ],
+      body: bootComplete
+          ? SafeArea(
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Splash screen on ${Env.key} environment'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: goToCubit,
+                          child: Text('Cubit'),
+                        ),
+                        SizedBox(width: 4),
+                        ElevatedButton(
+                          onPressed: goToBloc,
+                          child: Text('Bloc'),
+                        ),
+                        SizedBox(width: 4),
+                        ElevatedButton(
+                          onPressed: goToErrorScreen,
+                          child: Text('Error Screen'),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () =>
+                              App.notifySuccess('Write your message here'),
+                          child: Text('Alert Success'),
+                        ),
+                        SizedBox(width: 4),
+                        ElevatedButton(
+                          onPressed: () =>
+                              App.notifyError('Write your message here'),
+                          child: Text('Alert Error'),
+                        ),
+                        SizedBox(width: 4),
+                        ElevatedButton(
+                          onPressed: () =>
+                              App.notifyWarning('Write your message here'),
+                          child: Text('Alert warning'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () =>
-                        App.notifySuccess('Write your message here'),
-                    child: Text('Alert Success'),
-                  ),
-                  SizedBox(width: 4),
-                  ElevatedButton(
-                    onPressed: () => App.notifyError('Write your message here'),
-                    child: Text('Alert Error'),
-                  ),
-                  SizedBox(width: 4),
-                  ElevatedButton(
-                    onPressed: () =>
-                        App.notifyWarning('Write your message here'),
-                    child: Text('Alert warning'),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+            )
+          : Center(
+              child: CircularProgressIndicator(),
+            ),
     );
   }
 }
