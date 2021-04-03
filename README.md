@@ -11,7 +11,7 @@ A scalable boilerplate for flutter apps.
 - [ ] Themes
 - [ ] Common Components
   - [ ] Button
-  - [ ] Alerts
+  - [x] Alerts
   - [ ] Progress Indicators
   - [ ] Bottom Sheets
 - [ ] Fluid transitions between components
@@ -32,3 +32,10 @@ A scalable boilerplate for flutter apps.
 3. Add the ENV variables in both the `.env` files and then the [abstraction class](lib/config/environment.dart).
 4. ENV variables can then be accessed after importing the [environment file](lib/config/environment.dart).
    For example: `Env.key`
+
+#### Toast Alerts
+1. No need to pass context to display the toast alerts. 
+2. Use `App.notifySuccess(message)` to display a success message.
+3. Use `App.notifyWarning(message)` to display a warning message.
+4. Use `App.notifyError(message)` to display a error message.
+5. You can customize these toasts in the [app.dart](lib/config/app.dart) file. 
