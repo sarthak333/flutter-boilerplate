@@ -6,3 +6,11 @@ const String login = r'''
     }
   }
 ''';
+
+const String currentUser = r'''
+  query currentUser {
+    currentUser{
+    id
+    }
+  }
+''';

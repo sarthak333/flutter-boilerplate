@@ -1,5 +1,5 @@
 // Use this for queries
-import 'package:flutter_boilerplate/config/utils/apollo_client.dart';
+import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/core/data/models/api_response_model.dart';
 import 'package:graphql/client.dart';
 
@@ -14,7 +14,7 @@ Future<ApiResponse> graphqlQuery(
     variables: variables,
   );
   ApiResponse apiReponse;
-  final QueryResult result = await client.query(options);
+  final QueryResult result = await App.shared.apolloClient.query(options);
   if (result.hasException) {
     apiReponse = ApiResponse(
       null,
@@ -45,7 +45,7 @@ Future<ApiResponse> graphqlMutate(
     variables: variables,
   );
   ApiResponse apiReponse;
-  final QueryResult result = await client.mutate(options);
+  final QueryResult result = await App.shared.apolloClient.mutate(options);
   if (result.hasException) {
     apiReponse = ApiResponse(
       null,

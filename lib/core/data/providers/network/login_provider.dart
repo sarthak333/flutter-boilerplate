@@ -10,3 +10,8 @@ Future<dynamic> handleUserLogin(String email, String password) async {
   });
   return response;
 }
+
+Future<dynamic> getCurrentUSer() async {
+  ApiResponse response = await graphqlQuery(currentUser, {});
+  return response;
+}

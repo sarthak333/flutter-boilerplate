@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/core/business/authentication/login_events.dart';
 import 'package:flutter_boilerplate/core/data/models/api_response_model.dart';
 import 'package:flutter_boilerplate/core/data/providers/network/login_provider.dart';
@@ -29,6 +30,9 @@ class LoginBloc extends Bloc<LoginEvent, dynamic> {
           loginForm.value['email'].toString(),
           loginForm.value['password'].toString(),
         );
+        App.token = response.data['authLogin']['accessToken'];
+        ApiResponse currentUser = await getCurrentUSer();
+        print(currentUser);
         yield state;
         break;
       case LoginEvent.loginSuccess:
