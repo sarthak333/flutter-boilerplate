@@ -33,6 +33,7 @@ dependencies:
   firebase_analytics: "^8.0.0-dev.0"
   firebase_core: "^1.0.2"
   firebase_messaging: "^9.1.0"
+  graphql: 5.0.0-nullsafety.4
   google_fonts: ^2.0.0
   reactive_forms: ^10.2.0
 

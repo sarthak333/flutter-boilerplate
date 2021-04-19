@@ -37,12 +37,6 @@ class _LoginState extends State<Login> {
                   children: [
                     ReactiveTextField(
                       decoration: InputDecoration(
-                        hintText: 'Name',
-                      ),
-                      formControlName: 'name',
-                    ),
-                    ReactiveTextField(
-                      decoration: InputDecoration(
                         hintText: 'Email',
                       ),
                       formControlName: 'email',

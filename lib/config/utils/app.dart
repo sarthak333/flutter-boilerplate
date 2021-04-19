@@ -13,6 +13,8 @@ class App {
   static GlobalKey<NavigatorState> navigatorKey =
       new GlobalKey<NavigatorState>();
 
+  static String token = '';
+
   // Use this function to set common global specifications for the navigation. For eg: transition
   static navigateTo(
     BuildContext context,
