@@ -36,8 +36,13 @@ dependencies:
   google_fonts: ^2.0.0
   reactive_forms: ^10.2.0
   flutter_dotenv: 4.0.0-nullsafety.0
+  hydrated_bloc: ^7.0.0
+  path_provider: ^2.0.1
+  json_serializable: ^4.1.0
+  copy_with_extension: ^2.0.0
 
 dev_dependencies:
+  copy_with_extension_gen: ^2.0.1
   build_runner: ^1.12.2
   flutter_test:
     sdk: flutter

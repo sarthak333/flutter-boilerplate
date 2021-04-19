@@ -1,6 +1,6 @@
 // Use this for queries
 import 'package:flutter_boilerplate/config/utils/app.dart';
-import 'package:flutter_boilerplate/core/data/models/api_response_model.dart';
+import 'package:flutter_boilerplate/core/data/models/common/api_response_model.dart';
 import 'package:graphql/client.dart';
 
 Future<ApiResponse> graphqlQuery(

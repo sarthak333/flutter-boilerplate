@@ -15,6 +15,10 @@ class _LoginState extends State<Login> {
     loginBloc.add(LoginEvent.formSubmit);
   }
 
+  void _getCurrentUser() {
+    loginBloc.add(LoginEvent.getCurrentUser);
+  }
+
   @override
   void dispose() {
     loginBloc.close();
@@ -56,6 +60,8 @@ class _LoginState extends State<Login> {
                         );
                       },
                     ),
+                    ElevatedButton(
+                        onPressed: _getCurrentUser, child: Text('Current User'))
                   ],
                 ),
               ),
