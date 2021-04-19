@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flash/flash.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class App {
   static final App _singleton = App._internal();
@@ -13,6 +14,10 @@ class App {
   static GlobalKey<NavigatorState> navigatorKey =
       new GlobalKey<NavigatorState>();
 
+  // ignore: non_constant_identifier_names
+  static String ENV = env['KEY'].toString();
+  // ignore: non_constant_identifier_names
+  static String API_URL = env['API_URL'].toString();
   static String token = '';
 
   // Use this function to set common global specifications for the navigation. For eg: transition

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
-import 'package:flutter_boilerplate/config/environment/environment.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -45,7 +44,7 @@ class _HomeState extends State<Home> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Home screen on ${Env.key} environment'),
+              Text('Home screen on ${App.ENV} environment'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

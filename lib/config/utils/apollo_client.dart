@@ -1,7 +1,7 @@
 import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:graphql/client.dart';
 
-final _httpLink = HttpLink('API_URL');
+final _httpLink = HttpLink(App.API_URL);
 
 final _authLink = AuthLink(
   getToken: () async => App.token,
