@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), _goToHome);
+    Future.delayed(Duration(seconds: 1), _goToHome);
     handleBoot().then((value) {
       setState(() {
         bootComplete = value;

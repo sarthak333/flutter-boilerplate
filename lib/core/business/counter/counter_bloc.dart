@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/core/business/bloc/events.dart';
+import 'package:flutter_boilerplate/core/business/counter/events.dart';
 
 class CounterBloc extends Bloc<CounterEvent, int> {
   CounterBloc() : super(0);

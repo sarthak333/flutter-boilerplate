@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
-import 'package:flutter_boilerplate/core/business/cubit/counter_cubit.dart';
+import 'package:flutter_boilerplate/core/business/counter/counter_cubit.dart';
 
 class CounterCubitPage extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/core/business/bloc/counter_bloc.dart';
-import 'package:flutter_boilerplate/core/business/bloc/events.dart';
+import 'package:flutter_boilerplate/core/business/counter/counter_bloc.dart';
+import 'package:flutter_boilerplate/core/business/counter/events.dart';
 
 class CounterBlocPage extends StatefulWidget {
   @override

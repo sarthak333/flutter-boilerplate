@@ -29,6 +29,13 @@ class _HomeState extends State<Home> {
     );
   }
 
+  void _goToLogin() {
+    App.navigateTo(
+      context,
+      'login?message=this_is_login',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,6 +84,16 @@ class _HomeState extends State<Home> {
                         App.notifyWarning('Write your message here'),
                     child: Text('Alert warning'),
                   ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: _goToLogin,
+                    child: Text('Login'),
+                  ),
+                  SizedBox(width: 4),
                 ],
               ),
             ],
