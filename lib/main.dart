@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/config/utils/SimpleBlocObserver.dart';
+import 'package:flutter_boilerplate/config/utils/bloc_observer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/config/utils/firebase.dart';
 import 'package:flutter_boilerplate/core/presentation/app/app.dart';

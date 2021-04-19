@@ -66,7 +66,7 @@ Future handleFirebaseConfig(RemoteMessage? backgroundMessage) async {
 void displayNotification(
     FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin,
     RemoteMessage message) {
-  AndroidNotification? android = message.notification?.android;
+  // AndroidNotification? android = message.notification?.android;
   flutterLocalNotificationsPlugin.show(
     int.parse(message.data['id']),
     message.data['title'],
