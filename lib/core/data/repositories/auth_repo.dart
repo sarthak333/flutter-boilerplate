@@ -1,5 +1,5 @@
 import 'package:flutter_boilerplate/constants/queries.dart';
-import 'package:flutter_boilerplate/core/data/models/common/api_response_model.dart';
+import 'package:flutter_boilerplate/core/data/models/api_response_model.dart';
 import 'package:flutter_boilerplate/core/data/repositories/network_request_handlers.dart';
 
 class AuthRepo {

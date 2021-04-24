@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
-import 'package:flutter_boilerplate/core/business/global_app_state/app_cubit.dart';
-import 'package:flutter_boilerplate/core/data/models/common/api_response_model.dart';
-import 'package:flutter_boilerplate/core/data/models/common/login_state.dart';
+import 'package:flutter_boilerplate/core/business/app_cubit.dart';
+import 'package:flutter_boilerplate/core/data/models/api_response_model.dart';
+import 'package:flutter_boilerplate/core/data/models/login_state.dart';
 import 'package:flutter_boilerplate/core/data/repositories/auth_repo.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/core/business/authentication/login_cubit.dart';
-import 'package:flutter_boilerplate/core/business/global_app_state/app_cubit.dart';
+import 'package:flutter_boilerplate/core/business/login_cubit.dart';
+import 'package:flutter_boilerplate/core/business/app_cubit.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class Login extends StatefulWidget {

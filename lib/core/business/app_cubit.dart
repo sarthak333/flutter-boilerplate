@@ -1,5 +1,5 @@
-import 'package:flutter_boilerplate/core/data/models/common/app_state_model.dart';
-import 'package:flutter_boilerplate/core/data/models/common/current_user_model.dart';
+import 'package:flutter_boilerplate/core/data/models/app_state_model.dart';
+import 'package:flutter_boilerplate/core/data/models/current_user_model.dart';
 import 'package:flutter_boilerplate/core/data/repositories/global_app_repo.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 

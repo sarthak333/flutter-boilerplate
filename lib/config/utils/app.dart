@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flash/flash.dart';
-import 'package:flutter_boilerplate/core/business/global_app_state/app_cubit.dart';
+import 'package:flutter_boilerplate/core/business/app_cubit.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql/client.dart';
 
