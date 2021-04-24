@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flash/flash.dart';
-import 'package:flutter_boilerplate/core/business/global_app_state/app_bloc.dart';
+import 'package:flutter_boilerplate/core/business/global_app_state/app_cubit.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql/client.dart';
 
@@ -20,7 +20,7 @@ class App {
   static String ENV = env['KEY'].toString();
   // ignore: non_constant_identifier_names
   static String API_URL = env['API_URL'].toString();
-  static String token = AppBloc().state.token ?? '';
+  static String token = AppCubit().state.token ?? '';
   late GraphQLClient apolloClient;
   // Use this function to set common global specifications for the navigation. For eg: transition
   static navigateTo(

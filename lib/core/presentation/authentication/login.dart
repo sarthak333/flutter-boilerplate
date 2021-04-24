@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/core/business/authentication/login_bloc.dart';
-import 'package:flutter_boilerplate/core/business/authentication/login_events.dart';
+import 'package:flutter_boilerplate/core/business/authentication/login_cubit.dart';
+import 'package:flutter_boilerplate/core/business/global_app_state/app_cubit.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class Login extends StatefulWidget {
@@ -9,19 +9,19 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final LoginBloc loginBloc = LoginBloc();
+  final LoginCubit loginCubit = LoginCubit();
 
   void _handleSubmit() {
-    loginBloc.add(LoginEvent.formSubmit);
+    loginCubit.submitForm();
   }
 
   void _getCurrentUser() {
-    loginBloc.add(LoginEvent.getCurrentUser);
+    print(AppCubit().state.currentUser?.toJson().toString());
   }
 
   @override
   void dispose() {
-    loginBloc.close();
+    loginCubit.close();
     super.dispose();
   }
 
@@ -36,7 +36,7 @@ class _LoginState extends State<Login> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ReactiveForm(
-                formGroup: loginBloc.loginForm,
+                formGroup: loginCubit.loginForm,
                 child: Column(
                   children: [
                     ReactiveTextField(
@@ -61,7 +61,8 @@ class _LoginState extends State<Login> {
                       },
                     ),
                     ElevatedButton(
-                        onPressed: _getCurrentUser, child: Text('Current User'))
+                        onPressed: _getCurrentUser,
+                        child: Text('Log Current User'))
                   ],
                 ),
               ),

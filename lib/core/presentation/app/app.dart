@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/config/routes/routes.dart';
-import 'package:flutter_boilerplate/core/business/global_app_state/app_bloc.dart';
+import 'package:flutter_boilerplate/core/business/global_app_state/app_cubit.dart';
 
 class AppComponent extends StatefulWidget {
   @override
@@ -22,7 +22,7 @@ class AppComponentState extends State<AppComponent> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => AppBloc(),
+      create: (BuildContext context) => AppCubit(),
       child: MaterialApp(
         navigatorKey: App.navigatorKey,
         title: 'Flutter boilerplate',
