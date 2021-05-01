@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/business/login_cubit.dart';
 import 'package:flutter_boilerplate/core/business/app_cubit.dart';
+import 'package:flutter_boilerplate/core/presentation/common/spacing.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class Login extends StatefulWidget {
@@ -30,7 +31,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(space4),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,

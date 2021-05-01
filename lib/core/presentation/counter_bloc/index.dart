@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/core/business/counter/counter_bloc.dart';
 import 'package:flutter_boilerplate/core/business/counter/events.dart';
+import 'package:flutter_boilerplate/core/presentation/common/spacing.dart';
 
 class CounterBlocPage extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _CounterBlocPageState extends State<CounterBlocPage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: space1),
             child: FloatingActionButton(
               heroTag: 'increment',
               child: const Icon(Icons.add),
@@ -30,7 +31,7 @@ class _CounterBlocPageState extends State<CounterBlocPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: space1),
             child: FloatingActionButton(
               heroTag: 'decrement',
               child: const Icon(Icons.remove),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/core/business/counter/counter_cubit.dart';
+import 'package:flutter_boilerplate/core/presentation/common/spacing.dart';
 
 class CounterCubitPage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _CounterCubitPageState extends State<CounterCubitPage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: space1),
             child: FloatingActionButton(
               heroTag: 'increment',
               child: const Icon(Icons.add),
@@ -36,7 +37,7 @@ class _CounterCubitPageState extends State<CounterCubitPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: space1),
             child: FloatingActionButton(
               heroTag: 'decrement',
               child: const Icon(Icons.remove),
@@ -44,7 +45,7 @@ class _CounterCubitPageState extends State<CounterCubitPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: space1),
             child: FloatingActionButton(
               heroTag: 'nav',
               child: const Text('Bloc'),

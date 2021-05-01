@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter_boilerplate/core/business/app_cubit.dart';
+import 'package:flutter_boilerplate/core/presentation/common/spacing.dart';
 import 'package:flutter_boilerplate/core/presentation/common/widgets/bottom_sheet.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql/client.dart';
@@ -173,11 +174,11 @@ class App {
     double borderWidth = 0,
     bool enableDrag = true,
     FlashStyle? style = FlashStyle.floating,
-    EdgeInsets margin = const EdgeInsets.all(8),
+    EdgeInsets margin = const EdgeInsets.all(space2),
     Color? leftBarIndicatorColor,
     List<Widget>? actions,
     Widget? icon,
-    EdgeInsets padding = const EdgeInsets.all(16),
+    EdgeInsets padding = const EdgeInsets.all(space4),
     Widget? primaryAction,
     bool shouldIconPulse = true,
     bool showProgressIndicator = false,
