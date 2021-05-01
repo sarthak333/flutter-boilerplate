@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
+import 'package:flutter_boilerplate/core/presentation/common/widgets/spacing.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -35,6 +36,10 @@ class _HomeState extends State<Home> {
     );
   }
 
+  void _openBottomSheet() {
+    App.showBottomSheet(Text('This is a bottom sheet'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +57,12 @@ class _HomeState extends State<Home> {
                     onPressed: _goToCubit,
                     child: Text('Cubit'),
                   ),
-                  SizedBox(width: 4),
+                  spacingWidth(4),
                   ElevatedButton(
                     onPressed: _goToBloc,
                     child: Text('Bloc'),
                   ),
-                  SizedBox(width: 4),
+                  spacingWidth(4),
                   ElevatedButton(
                     onPressed: _goToErrorScreen,
                     child: Text('Error Screen'),
@@ -72,12 +77,12 @@ class _HomeState extends State<Home> {
                         App.notifySuccess('Write your message here'),
                     child: Text('Alert Success'),
                   ),
-                  SizedBox(width: 4),
+                  spacingWidth(4),
                   ElevatedButton(
                     onPressed: () => App.notifyError('Write your message here'),
                     child: Text('Alert Error'),
                   ),
-                  SizedBox(width: 4),
+                  spacingWidth(4),
                   ElevatedButton(
                     onPressed: () =>
                         App.notifyWarning('Write your message here'),
@@ -92,7 +97,12 @@ class _HomeState extends State<Home> {
                     onPressed: _goToLogin,
                     child: Text('Login'),
                   ),
-                  SizedBox(width: 4),
+                  spacingWidth(4),
+                  ElevatedButton(
+                    onPressed: _openBottomSheet,
+                    child: Text('Bottom Sheet'),
+                  ),
+                  spacingWidth(4),
                 ],
               ),
             ],

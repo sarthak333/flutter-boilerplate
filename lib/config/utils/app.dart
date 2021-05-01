@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter_boilerplate/core/business/app_cubit.dart';
+import 'package:flutter_boilerplate/core/presentation/common/widgets/bottom_sheet.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql/client.dart';
 
@@ -22,6 +23,7 @@ class App {
   static String API_URL = env['API_URL'].toString();
   static String token = AppCubit().state.token ?? '';
   late GraphQLClient apolloClient;
+
   // Use this function to set common global specifications for the navigation. For eg: transition
   static navigateTo(
     BuildContext context,
@@ -46,6 +48,14 @@ class App {
       transitionBuilder: transitionBuilder,
       routeSettings: routeSettings,
     );
+  }
+
+  static screenWidth(BuildContext context) {
+    return MediaQuery.of(context).size.width;
+  }
+
+  static screenHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height;
   }
 
   static notifySuccess(
@@ -88,6 +98,56 @@ class App {
         color: Colors.orange,
       ),
     );
+  }
+
+  static showBottomSheet(
+    Widget child, {
+    BuildContext? context,
+    Color? backgroundColor,
+    Color? barrierColor,
+    Clip? clipBehaviour,
+    double? elevation,
+    bool? enableDrag,
+    bool? isDismissible,
+    bool? isScrollControlled,
+    RouteSettings? routeSettings,
+    AnimationController? transitionAnimationController,
+    bool? useRootNavigator,
+    ShapeBorder? shape,
+    double? height,
+    double? width,
+    EdgeInsetsGeometry? sheetPadding,
+    MainAxisAlignment? mainAxisAlignment,
+    CrossAxisAlignment? crossAxisAlignment,
+    Widget? sheetThumb,
+  }) {
+    showModalBottomSheet(
+        context: context ?? navigatorKey.currentContext as BuildContext,
+        backgroundColor: backgroundColor ?? Colors.white,
+        barrierColor: barrierColor ?? Colors.black.withOpacity(0.7),
+        clipBehavior: clipBehaviour,
+        elevation: elevation,
+        enableDrag: enableDrag ?? true,
+        isDismissible: isDismissible ?? true,
+        isScrollControlled: isScrollControlled ?? true,
+        routeSettings: routeSettings,
+        transitionAnimationController: transitionAnimationController,
+        useRootNavigator: useRootNavigator ?? true,
+        shape: shape ??
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            ),
+        builder: (builder) {
+          return CommonBottomSheet(
+            child,
+            height: height,
+            crossAxisAlignment: crossAxisAlignment,
+            mainAxisAlignment: mainAxisAlignment,
+            sheetPadding: sheetPadding,
+            sheetThumb: sheetThumb,
+            width: width,
+          );
+        });
   }
 
 // Private function to handle alert pop ups
