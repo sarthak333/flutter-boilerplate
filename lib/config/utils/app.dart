@@ -25,7 +25,7 @@ class App {
   static String token = AppCubit().state.token ?? '';
   late GraphQLClient apolloClient;
 
-  // Use this function to set common global specifications for the navigation. For eg: transition
+  /// Use this function to navigateTo a new route. For eg: transition
   static navigateTo(
     BuildContext context,
     String path, {
@@ -49,6 +49,11 @@ class App {
       transitionBuilder: transitionBuilder,
       routeSettings: routeSettings,
     );
+  }
+
+  /// Pop the current screen and go back to the previous one
+  static goBack(BuildContext context) {
+    router.pop(context);
   }
 
   static screenWidth(BuildContext context) {
