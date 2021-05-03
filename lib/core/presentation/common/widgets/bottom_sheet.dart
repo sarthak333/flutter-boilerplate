@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/core/presentation/common/spacing.dart';
+import 'package:flutter_boilerplate/core/presentation/common/styles/bottom_sheet_style.dart';
 import 'package:flutter_boilerplate/core/presentation/common/widgets/spacing.dart';
 
 class CommonBottomSheet extends StatelessWidget {
@@ -29,13 +30,7 @@ class CommonBottomSheet extends StatelessWidget {
       constraints: BoxConstraints(
         maxHeight: App.screenHeight(context) - 50,
       ),
-      padding: sheetPadding ??
-          const EdgeInsets.only(
-            top: space5,
-            bottom: space8,
-            left: space8,
-            right: space8,
-          ),
+      padding: sheetPadding ?? defaultSheetPadding,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -45,10 +40,7 @@ class CommonBottomSheet extends StatelessWidget {
                 child: Container(
                   height: 6,
                   width: width ?? (App.screenWidth(context) / 4),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withAlpha(100),
-                    borderRadius: BorderRadius.circular(99),
-                  ),
+                  decoration: defaultSheetThumbStyle,
                 ),
               ),
           spacingHeight(space5),
