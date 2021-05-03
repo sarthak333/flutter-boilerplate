@@ -1,3 +1,4 @@
+import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/core/data/models/app_state_model.dart';
 import 'package:flutter_boilerplate/core/data/models/current_user_model.dart';
 import 'package:flutter_boilerplate/core/data/repositories/global_app_repo.dart';
@@ -13,10 +14,14 @@ class AppCubit extends HydratedCubit<AppState> {
   }
 
   Future<void> getCurrentUser() async {
-    CurrentUser? user = await repo.getCurrentUSer();
+    CurrentUser? user = await repo.getCurrentUser();
     if (user != null) {
       emit(state.copyWith(currentUser: user));
     }
+  }
+
+  void resetGraphqlClient() {
+    App.shared.apolloClient.resetStore();
   }
 
   @override

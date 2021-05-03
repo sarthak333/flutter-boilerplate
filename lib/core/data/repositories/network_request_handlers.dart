@@ -4,14 +4,14 @@ import 'package:flutter_boilerplate/core/data/models/api_response_model.dart';
 import 'package:graphql/client.dart';
 
 Future<ApiResponse> graphqlQuery(
-  String query,
-  Map<String, dynamic> variables, {
-  FetchPolicy fetchPolicy = FetchPolicy.cacheAndNetwork,
+  String query, {
+  Map<String, dynamic>? variables,
+  FetchPolicy fetchPolicy = FetchPolicy.cacheFirst,
 }) async {
   final QueryOptions options = QueryOptions(
     fetchPolicy: fetchPolicy,
     document: gql(query),
-    variables: variables,
+    variables: variables ?? {},
   );
   ApiResponse apiReponse;
   final QueryResult result = await App.shared.apolloClient.query(options);
@@ -38,11 +38,11 @@ Future<ApiResponse> graphqlQuery(
 }
 
 // Use this for mutations
-Future<ApiResponse> graphqlMutate(
-    String mutation, Map<String, dynamic> variables) async {
+Future<ApiResponse> graphqlMutate(String mutation,
+    {Map<String, dynamic>? variables}) async {
   final MutationOptions options = MutationOptions(
     document: gql(mutation),
-    variables: variables,
+    variables: variables ?? {},
   );
   ApiResponse apiReponse;
   final QueryResult result = await App.shared.apolloClient.mutate(options);

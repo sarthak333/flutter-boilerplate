@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/config/utils/app.dart';
 import 'package:flutter_boilerplate/core/business/app_cubit.dart';
@@ -40,6 +42,11 @@ class LoginCubit extends Cubit<LoginState> {
     } else {
       _handleLoginFailure();
     }
+  }
+
+  void getFullUser() async {
+    ApiResponse response = await repo.queryCurrentUserFull();
+    log(response.data.toString());
   }
 
   Future<void> _handleLoginSuccess() async {

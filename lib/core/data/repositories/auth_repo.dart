@@ -4,10 +4,17 @@ import 'package:flutter_boilerplate/core/data/repositories/network_request_handl
 
 class AuthRepo {
   Future<dynamic> handleUserLogin(String email, String password) async {
-    ApiResponse response = await graphqlQuery(login, {
+    ApiResponse response = await graphqlQuery(login, variables: {
       'email': email,
       'password': password,
     });
+    return response;
+  }
+
+  Future<dynamic> queryCurrentUserFull() async {
+    ApiResponse response = await graphqlQuery(
+      currentUserFull,
+    );
     return response;
   }
 }

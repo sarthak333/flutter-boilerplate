@@ -5,6 +5,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 Future<bool> handleBoot() async {
   await DotEnv.load(fileName: ".env");
   await handleFirebaseConfig(null);
-  initApolloClient();
+  await initApolloClient();
   return true;
 }

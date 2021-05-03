@@ -5,8 +5,8 @@ import 'package:flutter_boilerplate/core/data/models/current_user_model.dart';
 import 'package:flutter_boilerplate/core/data/repositories/network_request_handlers.dart';
 
 class GlobalRepo {
-  Future<CurrentUser?> getCurrentUSer() async {
-    ApiResponse response = await graphqlQuery(currentUser, {});
+  Future<CurrentUser?> getCurrentUser() async {
+    ApiResponse response = await graphqlQuery(currentUser);
     CurrentUser user;
     if (response.isSuccess) {
       user = CurrentUser.fromJson(response.data['currentUser']);

@@ -20,6 +20,10 @@ class _LoginState extends State<Login> {
     print(AppCubit().state.currentUser?.toJson().toString());
   }
 
+  void _callAPI() {
+    loginCubit.getFullUser();
+  }
+
   @override
   void dispose() {
     loginCubit.close();
@@ -62,8 +66,13 @@ class _LoginState extends State<Login> {
                       },
                     ),
                     ElevatedButton(
-                        onPressed: _getCurrentUser,
-                        child: Text('Log Current User'))
+                      onPressed: _getCurrentUser,
+                      child: Text('Log Current User'),
+                    ),
+                    ElevatedButton(
+                      onPressed: _callAPI,
+                      child: Text('Log Full Current User'),
+                    ),
                   ],
                 ),
               ),
